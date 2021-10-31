@@ -42,4 +42,4 @@ WOMBAT wants these fields in the units of `mmol m-3` for all tracers except for 
 
 1. `GLODAPv2 2016b` for no3, o2, adic, dic, alk.
 1. `FeMIP median` for fe.
-1. `0.0` mmom m-3` for phy, zoo, det, caco3.
+1. `0.01 mmom m-3` for phy, zoo, det, caco3.
