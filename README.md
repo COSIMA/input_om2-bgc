@@ -28,13 +28,18 @@ In addition, the following files need to be updated by adding extra coupling tra
 
 There are a few options for BGC initial conditions. The current version of this notebook supports generation of initial conditions either from:
 
-1. `access-om2-1deg_omip2_cycle5` (adic,dic,alk)
-1. `WOA13v2` (no3,o2; OMIP protocol)
-1. `GLODAPv2 2016b` (no3,o2,adic,dic,alk)
-1. `FeMIP median` (fe; mol L-1)
+1. `access-om2-1deg_omip2_cycle5` (adic,dic,alk). This is the restart file for the start of cycle 6 of omip2 (representative of 1958-01-01). This is used for 0.1deg-Cycle4.
+1. `WOA13v2` (no3,o2). This is the World Ocean Atlas 2013 version 2 (https://www.nodc.noaa.gov/OC5/woa13/woa13data.html).
+1. `GLODAPv2 2016b` (no3,o2,adic,dic,alk). This is the The Global Ocean Data Analysis Project (GLODAP) version 2, 2016b, gap-filled product (https://www.glodap.info/index.php/mapped-data-product/).
+1. `FeMIP median` (fe; mol L-1). This is the median values of multi-model output from FeMIP (http://omip-bgc.lsce.ipsl.fr/index.php/input-files/5-omip-bgc-initial-conditions). 
 1. `0.01 mmol m-3` is given to phy,zoo,det,caco3.
 
 Before regridding, input data are extrapolated over land to avoid missing values over the regridded ocean in case slight changes in the model bathymetry occurs in the future. This is done using `cdo fillmiss`.
 
 WOMBAT wants these fields in the units of `mmol m-3` for all tracers except for iron (`umol m-3`). Therefore, appropriate unit conversion is needed if the input data are provided in different units.
 
+### Default choice of the initial conditions for `master+bgc` branch of ACCESS-OM2
+
+1. `GLODAPv2 2016b` for no3, o2, adic, dic, alk.
+1. `FeMIP median` for fe.
+1. `0.0` mmom m-3` for phy, zoo, det, caco3.
