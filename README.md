@@ -5,7 +5,8 @@
 
 ## Directory structure
 
-1. `input` contains input data.
+1. directories are based on `basepath`
+1. `input` contains input data (this will be copied/symlinked from `insource` if needed)
 1. `tmp` is where the regridded data will be stored initially. Delete this directory manually after regridding is finished successfully and the regridded data are moved to `*deg`.
 1. `1deg`, `025deg`, `01deg` are where the regridded data are stored for each resolution.
 
