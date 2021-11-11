@@ -45,3 +45,7 @@ WOMBAT wants these fields in the units of `mmol m-3` for all tracers except for 
 1. `GLODAPv2 2016b` for no3, o2, adic, dic, alk.
 2. `FeMIP median` for fe.
 3. `0.01 mmom m-3` for phy, zoo, det, caco3.
+
+# Add sea-ice BGC fields to the sea-ice restart file.
+1. If your simulation uses warm start for physics, but cold start for BGC (such as https://github.com/COSIMA/01deg_jra55_iaf/tree/01deg_jra55v140_iaf_cycle4), you need to add initial fields for sea-ice BGC tracers to an existing restart file (e.g. `iced.2019-01-01-00000.nc`) and also sea-ice BGC coupling tracers to `i2o.nc` and `o2i.nc`.
+2. This can be done by executing `add_sea_ice_bgc_to_restart.sh`. In this script, modify the path to and the name of the restart file.
