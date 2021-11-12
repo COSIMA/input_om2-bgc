@@ -1,8 +1,9 @@
 # This script creates initial and boundary conditions for BGC in ACCESS-OM2 at three resolutions
 
-1. Everything is done within the Jupyter Notebook `interpolate_to_access-om2.ipynb`.
+1. For a cold start, everything is done within the Jupyter Notebook `interpolate_to_access-om2.ipynb`.
 2. This notebook should be run using `gadi_jupyter` by requesting the maximum memory for a whole node i.e., 192 GB.
-3. If you're happy with the results, you can run `finalise.sh` to commit any updates and include the git hash in the metadata of all .nc files.
+3. If adding BGC to an existing run, also edit and run `add_sea_ice_bgc_to_restart.sh` - see "Warm start" section below.
+4. If you're happy with the results, you can run `finalise.sh` to commit any updates and include the git hash in the metadata of all .nc files.
  
 ## Directory structure
 
@@ -46,6 +47,6 @@ WOMBAT wants these fields in the units of `mmol m-3` for all tracers except for 
 2. `FeMIP median` for fe.
 3. `0.01 mmom m-3` for phy, zoo, det, caco3.
 
-# Add sea-ice BGC fields to the sea-ice restart file.
+# Warm start: Add sea-ice BGC fields to the sea-ice restart file.
 1. If your simulation uses warm start for physics, but cold start for BGC (such as https://github.com/COSIMA/01deg_jra55_iaf/tree/01deg_jra55v140_iaf_cycle4), you need to add initial fields for sea-ice BGC tracers to an existing restart file (e.g. `iced.2019-01-01-00000.nc`) and also sea-ice BGC coupling tracers to `i2o.nc` and `o2i.nc`.
 2. This can be done by executing `add_sea_ice_bgc_to_restart.sh`. In this script, modify the path to and the name of the restart file.
