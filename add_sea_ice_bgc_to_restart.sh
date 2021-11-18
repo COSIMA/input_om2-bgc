@@ -1,8 +1,14 @@
+#!/usr/bin/env sh
+module load nco
+
+set -x
+set -e
+
 #Add sea-ice BGC tracers to the restart file and i2o.nc and o2i.nc.
 #Below, you need to define 'path2restart' and 'filename' for the restart file.
 
 #Define the path to the restart file you want to add BGC tracers
-path2restart=/g/data/ik11/outputs/access-om2-01/01deg_jra55v140_iaf_cycle3/restart731/ice
+path2restart=/g/data/ik11/restarts/access-om2-01/01deg_jra55v140_iaf_cycle3/restart731/ice
 
 #Define the name of the restart file
 filename=iced.2019-01-01-00000.nc
